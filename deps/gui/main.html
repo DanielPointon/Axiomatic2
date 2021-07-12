@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axiomatic</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="/eel.js"></script>
+    <style>
+        body {
+            padding: 20px;
+            background-color: #4A1A37 !important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+        integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+        integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+        crossorigin="anonymous"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+        integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+</head>
+
+<body>
+    <center>
+        <img src="cover.png" width="700px">
+    </center>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="usr">Enter Expression:</label>
+                <input type="text" class="form-control" id="latex">
+            </div>
+            <center>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-primary"
+                        onclick="taskClickHandler('simplify')">Simplify</button>
+                    <button type="button" class="btn btn-outline-success"
+                        onclick="taskClickHandler('solve')">Solve</button>
+                    <button type="button" class="btn btn-outline-info"
+                        onclick="taskClickHandler('differentiate')">Differentiate</button>
+                    <button type="button" class="btn btn-outline-danger"
+                        onclick="taskClickHandler('integrate')">Integrate</button><br>
+                    <button type="button" class="btn btn-outline-primary"
+                        onclick="taskClickHandler('miniTerminal')">Mini Terminal</button>
+                </div>
+            </center>
+        </div>
+
+    </div>
+    <div class="display: contents" style="display: none;" id="warning-alert-container">
+        <br>
+        <div class="alert alert-warning" role="alert" id="warning-alert">
+            Error message
+        </div>
+    </div>
+
+    <br>
+
+    <div id="input-box" class="card" style="display:none">
+        <div class="card-body">
+            <div id="input-image-box">
+                <p id="input-caption">You entered:</p>
+                <div id="input-image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div id="result-box" class="card" style="display:none">
+        <div class="card-body">
+            <div id="result-image-box">
+                <p id="result-caption">Result:</p>
+                <div id="result-image">
+                </div>
+                <button class="btn btn-outline-danger" id="video-maker">Get Video</button>
+                <button class="btn btn-outline-danger" id="pdf-maker">Get PDF</button>
+
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div id="requested-input-container">
+
+    </div>
+    <br>
+    <div id="terminal-container" style="display: none;">
+        <div class="jumbotron"
+            style="margin-bottom:5px; height:200px;overflow: auto; padding-top: 10px ; padding-bottom: 10px; padding-left:10px;"
+            id="code-holder">
+        </div>
+        <div class="input-group mb-3">
+            <input id="codeInput" type="text" class="form-control" placeholder="Enter some code"
+                aria-label="Enter some code" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-info" type="button" id="newlinebutton">Submit</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="/gui_utils.js"></script>
+    <script type="text/javascript" src="/script.js"></script>
+</body>
+
+</html>
