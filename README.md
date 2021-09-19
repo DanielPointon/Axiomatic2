@@ -2,8 +2,8 @@
 
 Equation solver that generates PDFs and videos to explain maths problems to students. Includes a custom built LaTeX parser and implementation of the proof search algorithm prolog uses. See demo videos:
 
-https://www.youtube.com/watch?v=zyGvJbNaeLA
-https://www.youtube.com/watch?v=g78DdNuNKR4
+* https://www.youtube.com/watch?v=zyGvJbNaeLA
+* https://www.youtube.com/watch?v=g78DdNuNKR4
 
 Interesting bits:
 * deps/algebra/functions/simplify.py
