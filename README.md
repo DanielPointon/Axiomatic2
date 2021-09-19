@@ -11,7 +11,7 @@ Interesting bits:
 * deps/parser/parser.py
 
 Uses:
-* Manim
+* Manim(see manimlib folder)
 * Eel
 * Python
 * JavaScript
